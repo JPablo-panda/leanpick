@@ -13,7 +13,7 @@ from src.fifo_core import (
 )
 
 # ---------------- Config de página ----------------
-st.set_page_config(page_title="FIFO Automator (MVP)", page_icon="📦", layout="wide")
+st.set_page_config(page_title="LeanPick (Pilot)", page_icon="📦", layout="wide")
 
 # ---------------- Utilidades de ruta ----------------
 BASE_DIR = Path(__file__).resolve().parent
