@@ -59,7 +59,7 @@ cfg = FifoConfig(
 )
 
 # ---------------- Encabezado ----------------
-st.title("📦 FIFO Automator - MVP")
+st.title("📦 LeanPick - Pilot")
 st.caption("CSV esperado: SKU, LoteID, FechaRecepcion, Ubicacion, Cantidad, CalidadStatus (+ opcional PrecioUnitarioUSD).")
 
 col1, col2, col3, col4 = st.columns(4)
