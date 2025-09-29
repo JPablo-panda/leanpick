@@ -15,6 +15,24 @@ from src.fifo_core import (
 # ---------------- Config de página ----------------
 st.set_page_config(page_title="LeanPick (Pilot)", page_icon="📦", layout="wide")
 
+#------------------Acceso de Usuario Basico-----------
+APP_PASSCODE = "Pablo"
+
+if "auth_ok" not in st.session_state:
+    st.session_state.auth_ok = False
+
+if not st.session_state.auth_ok:
+    st.title("🔐Acceso a LeanPick")
+    user_id = st.text_input("Ingresa tu ID de acceso", type="password", help="Solicita el passcode al admin")
+    if st.button("Entrar"):
+        if user_id.strip() == APP_PASSCODE:
+            st.session_state.auth_ok = True
+            st.success("Acceso concedido. Cargando...")
+            st.rerun
+        else: 
+            st.error("ID de acceso incorrecto.")
+    st.stop() #Detiene la app si no hubo acceso.
+
 # ---------------- Utilidades de ruta ----------------
 BASE_DIR = Path(__file__).resolve().parent
 DEFAULT_CSV = BASE_DIR / "data" / "onhand.csv"
